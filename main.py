@@ -10,7 +10,7 @@ import os, time, sys
 dir = os.getcwd()
 border = '+---------------------------+'
 ticon = '[>] ' 
-cmd_list = ['help', 'run', 'ID', 'info', 'git', 'time']
+cmd_list = ['help', 'run', 'ID', 'info', 'git', 'time','test']
 
 def orgfetch():
     print("                 _____ _____  ")
@@ -36,9 +36,12 @@ def main():
         inp = input(ticon)
         if inp in cmd_list:
             if inp == "help":
-                print("help, run, ID, info, git, time")
+                print("help, run, ID, info, git, time, test")
             if inp == 'info':
                 orgfetch()
+            if inp == 'test':
+                os.system('chmod +x getchannels.sh')
+                os.system('./getchannels.sh')
         else:
             print("Command not found.")
 
