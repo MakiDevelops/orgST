@@ -1,20 +1,22 @@
-#### Information:
+#### Imports:
+import os
+import sys
+import time
+from time import sleep
+
+### Information:
 terminal_name = "orgST Terminal"
 main_authors = "makidevelops, wdboyes13"
 contributors = "chureki (TableDev)"
 version = 1.0
-date_edited = "2025-12-24"
-
-### Imports:
-import os
-import sys
-import time
+date_edited = "2025-12-27"
 
 ## Vars:
 dir = os.getcwd()
 border = "+---------------------------+"
 ticon = "[>] "
-cmd_list = ["help", "run", "ID", "info", "git", "time"]
+cmd_list = ["help", "run", "ID", "info", "git", "time", "test", "exit"]
+runlist = ["C", "exit"]
 
 
 def cls():
@@ -23,14 +25,22 @@ def cls():
 
 def orgfetch():
     cls()
-    print("                 _____ _____  ")
+    print("                 _____ _____  ")  # the sleep stuff is to make it look cool!
+    sleep(0.1)
     print("                /  ___|_   _| ")
+    sleep(0.1)
     print("  ___  _ __ __ _\ `--.  | |   ")
+    sleep(0.1)
     print(" / _ \| '__/ _` |`--. \ | |   ")
+    sleep(0.1)
     print("| (_) | | | (_| /\__/ / | |   ")
+    sleep(0.1)
     print(" \___/|_|  \__, \____/  \_/   ")
+    sleep(0.1)
     print("            __/ |             ")
+    sleep(0.1)
     print("           |___/              ")
+    sleep(0.1)
     print(border)
     print("a cool open source terminal made by some people")
     print(f"Main authors: {main_authors}")
@@ -49,9 +59,22 @@ def main():
         inp = input(ticon)
         if inp in cmd_list:
             if inp == "help":
-                print("help, run, ID, info, git, time")
+                print("help, run, ID, info, git, time, test, exit")
             if inp == "info":
                 orgfetch()
+            if inp == "exit":
+                quit()
+            if inp == "run":
+                while True:
+                    inp = input("C for channelviewer: ")
+                    if inp in runlist:
+                        if inp == "C":
+                            print("it opens it now woah!")
+                        if inp == "exit":
+                            break
+                    else:
+                        print("That cannot be run. Type 'exit' to leave the run menu.")
+
         else:
             print("Command not found.")
 
