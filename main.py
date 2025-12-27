@@ -7,18 +7,23 @@
 #       (say `system(f"echo {some_user_input}")` and the user types in "; sudo dd if=/dev/zero of=/dev/sda bs=1M")
 # 5. Always check return codes when available (for commands, 0=success, >0=error)
 # 6. When making command things, use an LUT (lookup table)
+#
 from os import getcwd
+from time import sleep
 
 from git import Repo as gitrepo  # pip install GitPython
 
 terminal_name = "orgST Terminal"
+main_authors = "makidevelops, wdboyes13"
+contributors = "chureki (TableDev)"
 version = 1.0
-date_edited = "2025-12-24"
+date_edited = "2025-12-27"
 
 dir = getcwd()
 border = "+---------------------------+"
 ticon = "[>] "
-cmd_list = ["help", "run", "ID", "info", "git", "time", "test"]
+cmd_list = ["help", "run", "ID", "info", "git", "time", "test", "exit"]
+runlist = ["C", "exit"]
 
 
 def cls():
@@ -27,15 +32,26 @@ def cls():
 
 def orgfetch():
     cls()
-    print("                 _____ _____  ")
+    print("                 _____ _____  ")  # the sleep stuff is to make it look cool!
+    sleep(0.1)
     print("                /  ___|_   _| ")
-    print("  ___  _ __ __ _\\ `--.  | |   ")
-    print(" / _ \\| '__/ _` |`--. \\ | |   ")
-    print("| (_) | | | (_| /\\__/ / | |   ")
-    print(" \\___/|_|  \\__, \\____/  \\_/   ")
+    sleep(0.1)
+    print("  ___  _ __ __ _\ `--.  | |   ")
+    sleep(0.1)
+    print(" / _ \| '__/ _` |`--. \ | |   ")
+    sleep(0.1)
+    print("| (_) | | | (_| /\__/ / | |   ")
+    sleep(0.1)
+    print(" \___/|_|  \__, \____/  \_/   ")
+    sleep(0.1)
     print("            __/ |             ")
+    sleep(0.1)
     print("           |___/              ")
+    sleep(0.1)
     print(border)
+    print("a cool open source terminal made by some people")
+    print(f"Main authors: {main_authors}")
+    print(f"Contributors: {contributors}")
     print(f"{terminal_name} {version}.")
     print(f"Last edited: {date_edited}")
 
@@ -51,10 +67,24 @@ def dotest():
         )
 
 
+def dorun():
+    while True:
+        inp = input("C for channelviewer: ")
+        if inp in runlist:
+            if inp == "C":
+                print("it opens it now woah!")
+            if inp == "exit":
+                break
+        else:
+            print("That cannot be run. Type 'exit' to leave the run menu.")
+
+
 cmds = {
     "help": lambda: print("help, run, ID, info, git, time, test"),
     "info": orgfetch,
     "test": dotest,
+    "exit": quit,
+    "run": dorun,
 }
 
 
