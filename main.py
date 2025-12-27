@@ -1,19 +1,25 @@
 #### Information:
-terminal_name = 'orgST Terminal'
+terminal_name = "orgST Terminal"
+main_authors = "makidevelops, wdboyes13"
+contributors = "chureki (TableDev)"
 version = 1.0
-date_edited = '2025-12-24'
+date_edited = "2025-12-24"
 
 ### Imports:
-import os, time, sys
+import os
+import sys
+import time
 
 ## Vars:
 dir = os.getcwd()
-border = '+---------------------------+'
-ticon = '[>] ' 
-cmd_list = ['help', 'run', 'ID', 'info', 'git', 'time']
+border = "+---------------------------+"
+ticon = "[>] "
+cmd_list = ["help", "run", "ID", "info", "git", "time"]
+
 
 def cls():
     print("\033[H\033[2J")
+
 
 def orgfetch():
     cls()
@@ -26,9 +32,11 @@ def orgfetch():
     print("            __/ |             ")
     print("           |___/              ")
     print(border)
+    print("a cool open source terminal made by some people")
+    print(f"Main authors: {main_authors}")
+    print(f"Contributors: {contributors}")
     print(f"{terminal_name} {version}.")
     print(f"Last edited: {date_edited}")
-    
 
 
 def main():
@@ -42,7 +50,7 @@ def main():
         if inp in cmd_list:
             if inp == "help":
                 print("help, run, ID, info, git, time")
-            if inp == 'info':
+            if inp == "info":
                 orgfetch()
         else:
             print("Command not found.")
