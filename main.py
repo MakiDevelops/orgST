@@ -12,7 +12,11 @@ border = '+---------------------------+'
 ticon = '[>] ' 
 cmd_list = ['help', 'run', 'ID', 'info', 'git', 'time','test']
 
+def cls():
+    print("\033[H\033[2J")
+
 def orgfetch():
+    cls()
     print("                 _____ _____  ")
     print("                /  ___|_   _| ")
     print("  ___  _ __ __ _\ `--.  | |   ")
@@ -25,6 +29,7 @@ def orgfetch():
     print(f"{terminal_name} {version}.")
     print(f"Last edited: {date_edited}")
     
+
 
 def main():
     print(f"{terminal_name} {version}.")
