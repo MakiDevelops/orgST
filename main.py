@@ -18,6 +18,7 @@ main_authors = "makidevelops, wdboyes13"
 contributors = "chureki (TableDev)"
 version = 1.0
 date_edited = "2025-12-27"
+spdxid = "MIT"
 
 dir = getcwd()
 border = "+---------------------------+"
@@ -54,6 +55,9 @@ def orgfetch():
     print(f"Contributors: {contributors}")
     print(f"{terminal_name} {version}.")
     print(f"Last edited: {date_edited}")
+    print(border)
+    print("Copyright (c) 2025 Wdboyes13, MakiDevelops. All rights reserved.")
+    print(f"SPDX-License-Identifier:{spdxid}")
 
 
 def dotest():
@@ -85,6 +89,9 @@ cmds = {
     "test": dotest,
     "exit": quit,
     "run": dorun,
+    "git": lambda: print(
+        "Go check out the repo @ https://github.com/MakiDevelops/orgST"
+    ),
 }
 
 
