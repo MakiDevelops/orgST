@@ -73,7 +73,7 @@ def dotest():
 
 def dorun():
     while True:
-        inp = input("C for channelviewer: ")
+        inp = input("C for channelviewer, 'exit' to leave. [>] ")
         if inp in runlist:
             if inp == "C":
                 print("it opens it now woah!")
@@ -106,7 +106,7 @@ def main():
         if inp in cmds:
             cmds[inp]()
         else:
-            print("Command not found.")
+            print("Command not found. Type 'help' for command lists.")
 
 
 if __name__ == "__main__":
